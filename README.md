@@ -79,12 +79,12 @@ Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `useP
 
 #### Réponse pour l'exercice 2 :
 
-### Code des hooks :
+##### Code des hooks :
 
-## useDebounce
+##### 1. useDebounce
 ![useDebounce](https://github.com/user-attachments/assets/11938410-fc4c-45a9-9f40-72aa1f0d7ef7)
 
-## useLocalStorage
+##### 2. useLocalStorage
 ![useLocalStorage](https://github.com/user-attachments/assets/5f7c63e3-7e90-4488-a255-ee7e4e524e3b)
 
 
