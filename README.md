@@ -77,11 +77,16 @@ Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `useP
 - [ ] 2.3 Utiliser ces hooks dans l'application
 - [ ] 2.4 Documenter votre solution ici
 
-_Votre réponse pour l'exercice 2 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
+#### Réponse pour l'exercice 2 :
+
+### Code des hooks :
+
+## useDebounce
+![useDebounce](https://github.com/user-attachments/assets/11938410-fc4c-45a9-9f40-72aa1f0d7ef7)
+
+## useLocalStorage
+![useLocalStorage](https://github.com/user-attachments/assets/5f7c63e3-7e90-4488-a255-ee7e4e524e3b)
+
 
 ### Exercice 3 : Optimisation et Context
 #### Objectif : Gérer le thème global et optimiser les rendus
