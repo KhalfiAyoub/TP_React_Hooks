@@ -52,8 +52,8 @@ Pour chaque exercice :
 - [ ] 1.3 Ajouter la fonctionnalité de recherche par titre ou contenu dans `PostSearch`
 - [ ] 1.4 Documenter votre solution ici
 
-_Votre réponse pour l'exercice 1 :_
-```
+#### Réponse pour l'exercice 1 :
+
 ## Solution
 
 Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `usePosts`, qui gère les états de chargement, d'erreur et de données. Le composant `PostSearch` permet de filtrer les posts par titre ou contenu en temps réel, tandis que le composant `PostList` affiche les posts filtrés avec un message de chargement ou d'erreur. L'application permet ainsi une recherche dynamique et une gestion fluide des posts récupérés.
@@ -62,13 +62,12 @@ Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `useP
 
 #### 1. Affichage des posts
 
-![Affichage des posts](screenshots/AffichagePosts.png)
+![Affichage des posts](https://github.com/user-attachments/assets/6897e398-134d-45bb-b7eb-6a5d4e937d13)
 
 #### 2. Recherche par titre
 
-![Recherche post](screenshots/Recherche.png)
+![Recherche par titre](https://github.com/user-attachments/assets/0d861d79-b8ef-44d8-b17d-5886064de13d)
 
-```
 
 ### Exercice 2 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
