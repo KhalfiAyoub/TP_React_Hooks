@@ -62,11 +62,11 @@ Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `useP
 
 #### 1. Affichage des posts
 
-![Affichage des posts](screenshots\AffichagePosts.png)
+![Affichage des posts](screenshots/AffichagePosts.png)
 
 #### 2. Recherche par titre
 
-![Recherche post](screenshots\Recherche.png)
+![Recherche post](screenshots/Recherche.png)
 
 ```
 
