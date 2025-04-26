@@ -54,8 +54,21 @@ Pour chaque exercice :
 
 _Votre réponse pour l'exercice 1 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+## Solution
+
+Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `usePosts`, qui gère les états de chargement, d'erreur et de données. Le composant `PostSearch` permet de filtrer les posts par titre ou contenu en temps réel, tandis que le composant `PostList` affiche les posts filtrés avec un message de chargement ou d'erreur. L'application permet ainsi une recherche dynamique et une gestion fluide des posts récupérés.
+
+### Captures d'écran
+
+#### 1. Affichage des posts
+
+![Affichage des posts](![Capture d’écran (175)](https://github.com/user-attachments/assets/35a9a5c8-e2c4-4055-a65a-c58f0f08d74e))
+
+#### 2. Recherche par titre
+
+![Recherche par titre](![Capture d’écran (176)](https://github.com/user-attachments/assets/01cb85d1-f1f6-49c8-9974-dae38ae8682c))
+
+
 ```
 
 ### Exercice 2 : Hooks Personnalisés
