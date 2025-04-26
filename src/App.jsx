@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import PostList from './components/PostList';
 import PostSearch from './components/PostSearch';
 import usePosts from './hooks/usePosts';
+import useDebounce from './hooks/useDebounce';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', '');
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
   const { posts, loading, error } = usePosts();
+
   const filteredPosts = posts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.body.toLowerCase().includes(searchTerm.toLowerCase())
+    post.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+    post.body.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
   );
 
   const handleSearchChange = (term) => {
@@ -25,7 +30,7 @@ function App() {
       </header>
 
       <main>
-        <PostSearch onSearch={handleSearchChange} />
+        <PostSearch onSearch={handleSearchChange} initialValue={searchTerm} />
         <PostList posts={filteredPosts} loading={loading} error={error} />
       </main>
 
