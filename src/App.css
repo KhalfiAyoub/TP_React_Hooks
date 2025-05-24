@@ -1,57 +1,147 @@
-/* Styles pour l'application de blog */
+/* ========== VARIABLES CSS ========== */
+:root {
+  /* Thème clair */
+  --bg-color: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --border-color: #dee2e6;
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --badge-bg: #f8f9fa;
+  --badge-text: #212529;
+  --primary-color: #0d6efd;
+  --primary-rgb: 13, 110, 253;
+  --secondary-color: #6c757d;
+}
 
-/* Transitions douces pour les changements de thème */
+[data-theme="dark"] {
+  /* Thème sombre */
+  --bg-color: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #e9ecef;
+  --text-muted: #adb5bd;
+  --border-color: #333333;
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --badge-bg: #333333;
+  --badge-text: #f8f9fa;
+  --primary-color: #3a86ff;
+  --primary-rgb: 58, 134, 255;
+  --secondary-color: #adb5bd;
+}
+
+/* ========== BASE STYLES ========== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.post-title {
+  color: var(--text-primary);
+}
+
+p, span, div,
+.card-text,
+.post-body {
+  color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* ========== SEARCH BAR ========== */
+.post-search input {
+  background-color: var(--card-bg);
+  color: var(--text-primary) !important;
+  border-color: var(--border-color);
+}
+
+.post-search input::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7 !important;
+}
+
+.post-search input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--primary-rgb), 0.25);
+}
+
+/* ========== CARDS ========== */
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* ========== BADGES ========== */
+.badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* ========== THEME TOGGLE ========== */
+.theme-toggle {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ========== TRANSITIONS ========== */
 body, 
 .card, 
 .btn, 
 .form-control, 
 .badge {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Hauteur minimale pour assurer une mise en page cohérente */
-.container {
-  min-height: 100vh;
-}
-
-/* Styles pour les cartes de posts */
-.card {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Styles pour les badges de tags */
-.badge {
-  font-size: 0.75rem;
-  padding: 0.35em 0.65em;
-  transition: background-color 0.2s ease;
-}
-
-.badge:hover {
-  opacity: 0.9;
+/* ========== UTILITY CLASSES ========== */
+.cursor-pointer {
   cursor: pointer;
 }
 
-/* Curseur personnalisé pour les éléments cliquables */
-.post-list .card,
-.badge[onClick] {
+/* ========== BOUTON THEME ========== */
+.theme-toggle {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-/* Styles pour les vignettes de posts */
-.card-title {
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.card-text {
-  color: inherit;
-  opacity: 0.8;
-}
-
-/* TODO: Exercice 3 - Ajouter des styles spécifiques au mode sombre */

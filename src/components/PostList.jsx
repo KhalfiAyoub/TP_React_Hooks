@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
-const PostList = ({ posts, loading, error }) => {
-  if (loading) return <p>Chargement des posts...</p>;
-  if (error) return <p>{error}</p>;
-  if (!posts || posts.length === 0) return <p>Aucun post trouvé.</p>;
+function PostList({ posts }) {
+  const formattedPosts = useMemo(() => {
+    return posts.map(post => ({
+      ...post,
+      date: new Date().toLocaleDateString()
+    }));
+  }, [posts]);
 
   return (
-    <div className="list-group">
-      {posts.map(post => (
-        <div key={post.id} className="list-group-item">
-          <h5>{post.title}</h5>
-          <p>{post.body}</p>
-        </div>
+    <div className="post-list">
+      {formattedPosts.map(post => (
+        <PostItem key={post.id} post={post} />
       ))}
     </div>
   );
-};
+}
+
+const PostItem = React.memo(({ post }) => {
+  return (
+    <div className={`post-item ${post.isFeatured ? 'featured' : ''}`}>
+      <h3>{post.title}</h3>
+      <p>{post.body}</p>
+      <div className="post-tags">
+        {post.tags.map(tag => (
+          <span key={tag} className="tag">{tag}</span>
+        ))}
+      </div>
+    </div>
+  );
+});
 
 export default PostList;

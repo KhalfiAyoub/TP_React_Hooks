@@ -1,22 +1,24 @@
-import React, { createContext, useContext } from 'react';
-// TODO: Exercice 2 - Importer useLocalStorage
+import { 
+  createContext, 
+  useContext, 
+  useMemo, 
+  useState, 
+  useCallback 
+} from 'react';
 
-// Créer le contexte
 const ThemeContext = createContext();
 
-/**
- * Provider pour le contexte de thème
- * @param {Object} props - Propriétés du composant
- * @param {React.ReactNode} props.children - Enfants du provider
- */
 export function ThemeProvider({ children }) {
-  // TODO: Exercice 3 - Utiliser useLocalStorage pour persister le thème
-  // TODO: Exercice 3 - Ajouter la fonction pour basculer entre les thèmes
-  
-  // Valeur fournie par le contexte
-  const value = {
-    // TODO: Exercice 3 - Fournir les valeurs et fonctions nécessaires
-  };
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = useCallback(() => {
+    setIsDarkMode(prev => !prev);
+  }, []);
+
+  const value = useMemo(() => ({
+    isDarkMode,
+    toggleTheme
+  }), [isDarkMode, toggleTheme]);
 
   return (
     <ThemeContext.Provider value={value}>
@@ -25,14 +27,6 @@ export function ThemeProvider({ children }) {
   );
 }
 
-/**
- * Hook personnalisé pour utiliser le contexte de thème
- * @returns {Object} Contexte de thème
- */
 export function useTheme() {
-  // TODO: Exercice 3 - Implémenter le hook useTheme
-  
-  return {}; // À modifier
+  return useContext(ThemeContext);
 }
-
-export default ThemeContext;

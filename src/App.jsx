@@ -5,10 +5,13 @@ import PostSearch from './components/PostSearch';
 import usePosts from './hooks/usePosts';
 import useDebounce from './hooks/useDebounce';
 import useLocalStorage from './hooks/useLocalStorage';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import ThemeToggle from './components/ThemeToggle';
 
-function App() {
+function AppContent() {
   const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', '');
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const { isDarkMode } = useTheme();
 
   const { posts, loading, error } = usePosts();
 
@@ -22,10 +25,11 @@ function App() {
   };
 
   return (
-    <div className="container py-4">
+    <div className="container py-4" data-theme={isDarkMode ? "dark" : "light"}>
       <header className="pb-3 mb-4 border-bottom">
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="display-5 fw-bold">Blog</h1>
+          <ThemeToggle />
         </div>
       </header>
 
@@ -40,6 +44,14 @@ function App() {
         </p>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 
