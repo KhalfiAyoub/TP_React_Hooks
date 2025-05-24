@@ -96,11 +96,19 @@ Les posts sont récupérés depuis l'API `dummyjson.com` à l'aide du hook `useP
 - [ ] 3.3 Utiliser `useCallback` et `useMemo` pour optimiser les performances
 - [ ] 3.4 Documenter votre solution ici
 
-_Votre réponse pour l'exercice 3 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
+#### Réponse pour l'exercice 3 :
+##### 3.1. Création du ThemeContext
+![ThemeContext](https://github.com/user-attachments/assets/95909585-d3fa-4d5b-8732-9f147efe6c37)
+##### 3.2. Implémentation du composant ThemeToggle
+![ThemeToggle](https://github.com/user-attachments/assets/57e267bf-2d41-49de-9110-88740d225a43)
+##### 3.3. Optimisation avec useCallback et useMemo
+![PostList](https://github.com/user-attachments/assets/fad14ea9-1f5a-4c4d-bab2-1d2584eeba2e)
+##### 3.4. Documentation de la solution
+##### Light Mode
+![Light Mode](https://github.com/user-attachments/assets/8b1159ff-1247-4d8c-9c73-2b516093f944)
+##### Dark Mode
+![Dark Mode](https://github.com/user-attachments/assets/891ebd5a-b29b-42d6-b01a-b7ca550bc142)
+
 
 ### Exercice 4 : Fonctionnalités avancées
 #### Objectif : Ajouter des fonctionnalités de chargement et détail
